@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JUMPSCARE!!!</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+  #jumpscare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: shake 0.1s infinite;
+  }
+  #jumpscare img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @keyframes flash {
+    0%, 100% { background-color: black; }
+    50% { background-color: red; }
+  }
+  @keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 5px); }
+    75% { transform: translate(5px, 5px); }
+    100% { transform: translate(-5px, -5px); }
+  }
+</style>
+</head>
+
+<body>
+
+<div id="jumpscare">
+  <img src="https://iili.io/3Ye99tV.jpg" alt="Jumpscare">
+</div>
+
+<audio id="audio" autoplay loop>
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const jumpscare = document.getElementById('jumpscare');
+document.body.style.animation = 'flash 0.2s infinite';
+
+const audio = document.getElementById('audio');
+audio.play().catch(()=>{});
+</script>
+
+</body>
+</html>

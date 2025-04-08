@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HACKED</title>
+<style>
+  body {
+    background-color: black;
+    color: lime;
+    font-family: monospace;
+    text-align: center;
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 50px;
+    animation: glitch 1s infinite;
+    margin-top: 20%;
+  }
+  @keyframes glitch {
+    0% {text-shadow: 2px 2px red;}
+    25% {text-shadow: -2px -2px blue;}
+    50% {text-shadow: 2px -2px green;}
+    75% {text-shadow: -2px 2px purple;}
+    100% {text-shadow: 2px 2px red;}
+  }
+  #errors {
+    white-space: pre-wrap;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  #btn {
+    display: none;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>HACKED BY UNKNOWN</h1>
+<div id="errors"></div>
+<button id="btn" onclick="window.location.href='halaman2.html'">Click to Continue</button>
+
+<script>
+const errors = [
+  "ERROR 404: SYSTEM FAILURE...",
+  "Access Denied...",
+  "Decrypting Password...",
+  "IP ADDRESS LEAKED...",
+  "Camera Accessed...",
+  "Tracking Location...",
+  "Extracting Data...",
+  "Uploading to Darkweb...",
+  "System Overloaded...",
+  "Virus Injected...",
+  "Self Destruct Mode Activated..."
+];
+
+let i = 0;
+function typeError() {
+  if(i < errors.length){
+    document.getElementById('errors').innerHTML += errors[i] + "\n";
+    i++;
+    setTimeout(typeError, 500);
+  } else {
+    document.getElementById('btn').style.display = 'inline-block';
+  }
+}
+setTimeout(typeError, 3000);
+</script>
+
+</body>
+</html>
